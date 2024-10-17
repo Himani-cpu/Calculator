@@ -1,32 +1,26 @@
-
 from tkinter import *
- 
-exp = "" 
+ exp = "" 
 
 def press(num): 
-	
 	global exp
-
-	 
 	exp = exp + str(num) 
 	equation.set(exp)  
-def equalpress(): 
-	
-	try: 
 
+def equalpress(): 
+	try: 
 		global exp 
 		total = str(eval(exp)) 
-
 		equation.set(total) 
 		exp = "" 
 	except: 
-
 		equation.set(" error ") 
 		exp = "" 
+
 def clear(): 
 	global exp 
 	exp = "" 
 	equation.set("") 
+
 if __name__ == "__main__": 
 	gui = Tk()  
 	gui.configure(background="light green") 
@@ -34,7 +28,6 @@ if __name__ == "__main__":
 	gui.geometry("270x150") 
 	equation = StringVar()  
 	expression_field = Entry(gui, textvariable=equation) 
-
 	expression_field.grid(columnspan=4, ipadx=70)
 
 	button1 = Button(gui, text=' 1 ', fg='black', bg='red', 
